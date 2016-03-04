@@ -6,6 +6,7 @@
 import math
 import random
 import time
+import sys
 
 from collections import deque
 from pyglet import image
@@ -13,6 +14,12 @@ from pyglet.gl import *
 from pyglet.graphics import TextureGroup
 from pyglet.window import key, mouse
 
+numArgs = len(sys.argv)
+if (numArgs >= 2):
+    TEXTURE_PATH = sys.argv[1]
+else:
+ TEXTURE_PATH = "texture.png"
+ 
 TICKS_PER_SEC = 60
 
 # Size of sectors used to ease block loading.
@@ -432,6 +439,7 @@ class Model(object):
 
 class Window(pyglet.window.Window):
 
+	
     def __init__(self, *args, **kwargs):
         super(Window, self).__init__(*args, **kwargs)
 
@@ -888,7 +896,7 @@ def setup():
 
 
 def main():
-    window = Window(width=800, height=600, caption='Pyglet', resizable=True)
+    window = Window(width=800, height=600, caption='Minecraft Pi | Community Edition', resizable=True)
     # Hide the mouse cursor and prevent the mouse from leaving the window.
     window.set_exclusive_mouse(True)
     setup()
