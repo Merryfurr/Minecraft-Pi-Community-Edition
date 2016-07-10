@@ -83,7 +83,6 @@ def tex_coords(top, bottom, side):
     return result
 
 
-TEXTURE_PATH = "texture.png"
 
 GRASS = tex_coords((1, 0), (0, 1), (0, 0))
 SAND = tex_coords((1, 1), (1, 1), (1, 1))
@@ -898,7 +897,7 @@ def setup():
 
 
 def main():
-    window = Window(width=800, height=600, caption='Minecraft Pi | Community Edition | Singleplayer', resizable=True)
+    window = Window(width=800, height=600, caption='Minecraft Pi Community Edition', resizable=True)
     # Hide the mouse cursor and prevent the mouse from leaving the window.
     window.set_exclusive_mouse(True)
     setup()
