@@ -20,6 +20,9 @@ if (numArgs >= 2):
 else:
  TEXTURE_PATH = "texture.png"
  
+name = "MC PI Community "
+version = "0.1"
+
 TICKS_PER_SEC = 60
 
 # Size of sectors used to ease block loading.
@@ -80,7 +83,6 @@ def tex_coords(top, bottom, side):
     return result
 
 
-TEXTURE_PATH = 'texture.png'
 
 GRASS = tex_coords((1, 0), (0, 1), (0, 0))
 SAND = tex_coords((1, 1), (1, 1), (1, 1))
@@ -841,10 +843,9 @@ class Window(pyglet.window.Window):
 
     def draw_label(self):
         """ Draw the label in the top left of the screen.
-
         """
         x, y, z = self.position
-        self.label.text = '%02d (%.2f, %.2f, %.2f) %d / %d' % (
+        self.label.text ='%02d (%.2f, %.2f, %.2f) %d / %d' % (
             pyglet.clock.get_fps(), x, y, z,
             len(self.model._shown), len(self.model.world))
         self.label.draw()
@@ -872,7 +873,7 @@ def setup_fog():
     glFogi(GL_FOG_MODE, GL_LINEAR)
     # How close and far away fog starts and ends. The closer the start and end,
     # the denser the fog in the fog range.
-    glFogf(GL_FOG_START, 20.0)
+    glFogf(GL_FOG_START, 40.0)
     glFogf(GL_FOG_END, 60.0)
 
 
@@ -896,7 +897,7 @@ def setup():
 
 
 def main():
-    window = Window(width=800, height=600, caption='Minecraft Pi | Community Edition', resizable=True)
+    window = Window(width=800, height=600, caption='Minecraft Pi Community Edition', resizable=True)
     # Hide the mouse cursor and prevent the mouse from leaving the window.
     window.set_exclusive_mouse(True)
     setup()
